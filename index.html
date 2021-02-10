@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Feed Me</title>
+
+        <script>
+            function mySubmit(){
+
+                var xhttp = new XMLHttpRequest();
+                // alert("button clicked");
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        // resp = xhttp.response;
+                        console.log(xhttp);
+                        // display response on the screen
+                        // greeting = document.getElementById("greeting");
+                        // greeting.textContent= resp;
+                        document.getElementById("status").innerHTML = this.responseText;
+                    }
+                };
+        
+                xhttp.open("POST", "./updateBlinkRate.php", true);
+                xhttp.send("fname=Henry");
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <!-- <script src="js/scripts.js"></script> -->
+        <button type="button" onClick="mySubmit()">Test</button>
+
+        <p id="status"></p>
+
+    </body>
+</html>
+
+<stlye>
+
+</stlye>
