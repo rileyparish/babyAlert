@@ -11,12 +11,13 @@
     $json = file_get_contents('php://input');
     // Convert it into a PHP object
     $data = json_decode($json);
+    $blinkRate = strval($data->{"value"});
 
-    $testFile = fopen("tempFile.txt", "a") or die("Unable to open file!");
+    $testFile = fopen("blinkRate.txt", "w") or die("Unable to open file!");
     $entry = "Received post request";
-    fwrite($testFile, strval($data->{"value"}));
+    fwrite($testFile, $blinkRate);
     fclose($testFile);
     // echo "Success";
-    echo 'Hello ' . strval($data->{"value"}) . '!';
+    echo "Blink rate set to " . $blinkRate;
     
 ?>

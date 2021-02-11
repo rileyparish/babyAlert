@@ -1,0 +1,22 @@
+button {
+    background-color: #85c287;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-right:auto;
+    margin-left:auto;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:4px;
+    width:40%;
+}
+#status{
+    text-align: center;
+    color:rgb(38, 255, 56);
+    font-size: large;
+    font-weight: bold;
+}

@@ -4,44 +4,43 @@
     <head>
         <meta charset="utf-8">
         <title>Feed Me</title>
+        <link rel="stylesheet" href="style.css">
 
         <script>
-            function mySubmit(){
-
+            function mySubmit(blinkRate){
                 var xhttp = new XMLHttpRequest();
                 // alert("button clicked");
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-
-                        // resp = xhttp.response;
-                        console.log(xhttp);
+                        // console.log(xhttp);
                         // display response on the screen
-                        // greeting = document.getElementById("greeting");
-                        // greeting.textContent= resp;
                         document.getElementById("status").innerHTML = this.responseText;
+                        setTimeout(clearNotice, 3000);
                     }
                 };
-        
+
                 xhttp.open("POST", "./updateBlinkRate.php", true);
-                // xhttp.send("fname=Henry");
                 xhttp.setRequestHeader('Content-Type', 'application/json');
                 xhttp.send(JSON.stringify({
-                    value: 42
+                    value: blinkRate
                 }));
             }
-        </script>
 
+            function clearNotice(){
+                document.getElementById("status").innerHTML = "";
+            }
+        </script>
     </head>
 
     <body>
-        <!-- <script src="js/scripts.js"></script> -->
-        <button type="button" onClick="mySubmit()">Test</button>
+        <button type="button" onClick="mySubmit(0)">Off</button>
+        <button type="button" onClick="mySubmit(4)">Starting to get hungry</button>
+        <button type="button" onClick="mySubmit(2)">She's hungry</button>
+        <button type="button" onClick="mySubmit(1)">Come out ASAP</button>
+        <button type="button" onClick="mySubmit(.5)">I really need you</button>
+        <button type="button" onClick="mySubmit(.1)">Kayla is going to eat me</button>
 
         <p id="status"></p>
-
     </body>
 </html>
 
-<stlye>
-
-</stlye>
