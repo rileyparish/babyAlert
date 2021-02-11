@@ -8,11 +8,12 @@ button {
     display: block;
     margin-right:auto;
     margin-left:auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
     cursor: pointer;
     border-radius:4px;
-    width:40%;
+    width:70%;
+    height:65px;
 }
 #status{
     text-align: center;
